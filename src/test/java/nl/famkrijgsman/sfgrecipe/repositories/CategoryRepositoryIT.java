@@ -23,9 +23,16 @@ class CategoryRepositoryIT {
     }
 
     @Test
-    void findByDescription() {
+    void findByDescriptionMex() {
         Optional<Category> categoryOptional = categoryRepository.findByDescription("Mexican");
 
         assertEquals("Mexican", categoryOptional.get().getDescription());
+    }
+
+    @Test
+    void findByDescriptionAm() {
+        Optional<Category> categoryOptional = categoryRepository.findByDescription("American");
+
+        assertEquals("American", categoryOptional.get().getDescription());
     }
 }
